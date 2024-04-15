@@ -1,1 +1,1 @@
-This is a sample git practice
+This is a sample git practice on the vs code
