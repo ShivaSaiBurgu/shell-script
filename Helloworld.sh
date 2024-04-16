@@ -1,1 +1,1 @@
-This is a sample shell script file with .sh extension
+This is a sample shell script file with .sh extension and it is used to practice
