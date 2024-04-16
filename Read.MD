@@ -1,1 +1,0 @@
-This is a sample git practice on the vs code to practice git
