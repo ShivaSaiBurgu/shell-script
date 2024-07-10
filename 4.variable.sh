@@ -1,3 +1,3 @@
 #!/bin/bash
-MOVIES = ("RRR" "kalki" "rangastalam")
+MOVIES = ('RRR' 'abc' 'xyz')
 echo "First movie is: ${Movies[0]}"
