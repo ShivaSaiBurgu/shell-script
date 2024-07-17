@@ -24,3 +24,7 @@ SUB=$((NO1-NO2))
 MUL=$((NO1*NO2))
 DIV=$((NO1/NO2))
 echo "$SUM"
+echo "$SUB"
+echo "$MUL"
+echo "$DIV"
+
