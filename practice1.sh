@@ -17,7 +17,7 @@ echo "Entered password is $PASSWORD"
 Movies=("Rebel" "Kalki" "RRR")
 echo "The movie is ${Movies[1]}"
 echo "The movie is ${Movies[@]}"
-no1=$1
-no2=$2
-sum = $((no1+no2))
+NO1=$1
+NO2=$2
+sum = $((NO1+NO2))
 echo "$sum"
