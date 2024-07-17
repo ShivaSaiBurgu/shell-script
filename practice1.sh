@@ -15,4 +15,4 @@ read -s PASSWORD
 echo "Entered username is $USERNAME"
 echo "Entered password is $PASSWORD"
 Movies=("Rebel" "Kalki" "RRR")
-echo "The movie is $Movies[1]"
+echo "The movie is $Movies(1)"
