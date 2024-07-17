@@ -9,8 +9,8 @@ person2=$2
 echo "$person1:Hii $person2! How are you?"
 echo "$person2:Hii $person1! Iam fine! What about you?"
 echo "Please Enter your username:"
-read USERNAME
+read -s USERNAME
 echo "Please Enter your password:"
-read PASSWORD
+read -s PASSWORD
 echo "Entered username is $USERNAME"
 echo "Entered password is $PASSWORD"
