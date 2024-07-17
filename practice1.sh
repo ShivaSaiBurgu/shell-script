@@ -20,4 +20,7 @@ echo "The movie is ${Movies[@]}"
 NO1=$1
 NO2=$2
 SUM=$((NO1+NO2))
+SUB=$((NO1-NO2))
+MUL=$((NO1*NO2))
+DIV=$((NO1/NO2))
 echo "$SUM"
