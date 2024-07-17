@@ -34,4 +34,15 @@ echo "present working directory is : $PWD"
 echo "Home directory is : $HOME"
 echo "which user is running this script: $USER"
 echo "Hostname: $HOSTNAME"
+Num1=1
+Num2=2
+sum=$((Num1+Num2))
+if($sum=3){
+    echo "Hii"
+}
+else
+{
+    echo "bye"
+}
+
 
