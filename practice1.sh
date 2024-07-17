@@ -37,7 +37,7 @@ echo "Hostname: $HOSTNAME"
 Num1=1
 Num2=2
 sum=$((Num1+Num2))
-if($(sum=3)){
+if(sum=3){
     echo "Hii"
 }
 else
