@@ -19,5 +19,5 @@ echo "The movie is ${Movies[1]}"
 echo "The movie is ${Movies[@]}"
 NO1=$1
 NO2=$2
-sum = $((NO1+NO2))
-echo "$sum"
+SUM = $((NO1+NO2))
+echo "$SUM"
