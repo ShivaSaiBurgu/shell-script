@@ -7,7 +7,7 @@ else
 echo "you are a root user"
 fi
 validate(){
-if [ $1 -ne 0]
+if [ $1 -ne 0 ]
 then
 echo "$2..Failure"
 else
