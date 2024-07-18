@@ -14,4 +14,5 @@ echo "Installation not occurred"
 exit 1
 else
 echo "Installed mysql server"
+fi
 
