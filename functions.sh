@@ -12,6 +12,7 @@ then
 echo "$2...Failure"
 else
 echo "$2...success"
+fi
 }
 dnf install mysql -y
 validate $? "Installing mysql"
