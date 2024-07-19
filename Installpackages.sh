@@ -6,4 +6,7 @@ exit 1
 else
 echo "You are a root user"
 fi
-echo "All packages are: $@"
+for i in $@
+do
+echo "Install package:$i"
+done
