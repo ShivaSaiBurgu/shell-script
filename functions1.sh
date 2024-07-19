@@ -7,3 +7,13 @@ exit 1
 else
 echo "you are a root user"
 fi
+validate() {
+if [ $1 -ne 0]
+then
+echo "$2...Failed"
+exit 1
+else
+echo "$2..success"
+}
+dnf install mysql -y
+validate $? "Installation of Mysql"
