@@ -3,7 +3,6 @@ USERTYPE=$(id -u)
 if [ $USERTYPE -ne 0 ]
 then
 sudo su
-fi
 yum install mysql -y
 if [ $? -ne 0 ]
 then
