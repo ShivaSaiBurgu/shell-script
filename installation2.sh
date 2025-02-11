@@ -10,3 +10,4 @@ echo "mysql not installed successfully"
 exit 1
 fi
 echo "Installation completed successfully"
+fi
