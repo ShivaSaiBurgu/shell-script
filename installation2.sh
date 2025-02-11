@@ -3,7 +3,7 @@ USERTYPE=$(id -u)
 if [ $USERTYPE -ne 0 ]
 then
 sudo su
-yum install mysql -y
+sudo apt install mysql-server
 if [ $? -ne 0 ]
 then
 echo "mysql not installed successfully"
