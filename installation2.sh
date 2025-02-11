@@ -2,6 +2,7 @@
 USERTYPE=$(id -u)
 if [ $USERTYPE -ne 0 ]
 then
+exit 1
 sudo su
 fi
 sudo apt install mysql-server
