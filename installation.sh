@@ -1,6 +1,10 @@
 #!/bin/bash
-USERTYPE=$(id -u)
-if [ $USERTYPE -eq 0 ]
-then 
-echo "Hello world"
+USERID=$(id -u)
+if [ $USERID -ne 0]
+then
+echo "Please run the script with root user"
+exit 1
+else
+echo "you are a root user"
 fi
+dnf install mysql -y
