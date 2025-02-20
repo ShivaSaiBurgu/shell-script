@@ -14,6 +14,7 @@ then
 echo "git not installed successfully"
 else
 echo "$2"
+fi
 }
 yum install git -y
 validate $? installed  git succcessfully
