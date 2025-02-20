@@ -13,8 +13,8 @@ if [ $1 -ne 0 ]
 then 
 echo "git not installed successfully"
 else
-echo "$2"
+echo "$2....successfully"
 fi
 }
 yum install git -y
-validate $? installed  git succcessfully
+validate $? "installing Git"
