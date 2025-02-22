@@ -20,5 +20,5 @@ else
 echo "$2...success"
 fi
 }
-yum install mysql -y
+yum install mysql -y $>>LOGFILE
 validate $? "Mysql installation"
