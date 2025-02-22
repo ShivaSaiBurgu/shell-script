@@ -1,4 +1,7 @@
 #!/bin/bash
+TIME=$(date +%f-%H-%M-%S)
+script=$(echo $0 | -d "." -f1)
+LOGFILE=/tmp/$TIME-$script.log
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
