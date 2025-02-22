@@ -1,5 +1,5 @@
 #!/bin/bash
-TIME=$(date +%f-%H-%M-%S)
+TIME=$(date +%F-%H-%M-%S)
 script=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIME-$script.log
 USERID=$(id -u)
