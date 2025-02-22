@@ -1,6 +1,6 @@
 #!/bin/bash
 TIME=$(date +%F-%H-%M-%S)
-script=$($0 | cut -d "." -f1)
+script=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIME-$script.log
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
