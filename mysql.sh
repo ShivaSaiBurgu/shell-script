@@ -6,6 +6,7 @@ LOGFILE=$TIME-$script.log
 if [ $USERID -ne 0 ]
 then
 echo "Please run the script with root user"
+exit 1
 else
 echo "You are a root user"
 fi
@@ -27,6 +28,8 @@ dnf install mysql-server -y &>>$LOGFILE
 systemctl start mysqld
 validate $? "starting mysql-server" 
 dnf install mysql-server -y &>>$LOGFILE
+mysql_secure_installation --set-root-pass ExpenseApp@1
+validate $? "password setup"
 
 
 
