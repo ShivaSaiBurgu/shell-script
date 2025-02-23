@@ -20,9 +20,9 @@ else
 echo "$2...success"
 fi
 }
-yum install git -y&>>logfile
+yum install git -y &>>$logfile
 validate $? "git installation"
-yum install mysql -y&>>logfile
+yum install mysql -y &>>$logfile
 validate $? "mysql installation"
-yum install docker -y&>>logfile
+yum install docker -y &>>$logfile
 validate $? "docker installation"
