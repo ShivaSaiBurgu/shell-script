@@ -16,6 +16,7 @@ validate()
     echo "$2....Failure"
     else
     echo "$2...success"
+    fi
 }
 dnf install mysql-server -y &>>$LOGFILE
 validate $? "mysql-server-installaion"
