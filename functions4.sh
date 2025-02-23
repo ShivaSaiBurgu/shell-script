@@ -1,4 +1,7 @@
 #!/bin/bash
+Timestamp=$(date +%F-%H-%M-%S)
+script=$(echo $0 |- cut -d "." -f1)
+logfile=/tmp/$Timestamp-$script.log
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
@@ -17,9 +20,9 @@ else
 echo "$2...success"
 fi
 }
-yum install git -y
+yum install git -y&>>logfile
 validate $? "git installation"
-yum install mysql -y
+yum install mysql -y&>>logfile
 validate $? "mysql installation"
-yum install docker -y
+yum install docker -y&>>logfile
 validate $? "docker installation"
