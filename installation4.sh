@@ -16,6 +16,7 @@ validate ()
     echo "$2....Failure"
     else
     echo "$2....Success"
+    fi
 }
 yum install git -y >>&$LOGFILE
 validate $? "Git Installation"
