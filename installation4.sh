@@ -18,10 +18,10 @@ validate ()
     echo "$2....Success"
     fi
 }
-yum install git -y >>&$LOGFILE
+yum install git -y&>>$LOGFILE
 validate $? "Git Installation"
-yum install mysql -y >>&$LOGFILE
+yum install mysql -y&>>$LOGFILE
 validate $? "Mysql Installation"
-yum install docker -y >>&$LOGFILE
+yum install docker -y&>>$LOGFILE
 validate $? "Docker Installation"
 
