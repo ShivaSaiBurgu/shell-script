@@ -2,7 +2,7 @@
 USER=$(id -u)
 TIME=$(date +%F-%H-%M-%S)
 script=$(echo $0 | cut -d "." -f1)
-LOGFILE=$TIME-$script.log
+LOGFILE=/tmp/$TIME-$script.log
 if [ $USER -ne 0 ]
 then
 echo "please run the script with root access"
