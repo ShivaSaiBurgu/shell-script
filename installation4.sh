@@ -6,6 +6,7 @@ LOGFILE=/tmp/$TIME-$script.log
 if [ $USER -ne 0 ]
 then
 echo "please run the script with root access"
+exit 1
 else
 echo "you are a root user"
 fi
@@ -14,6 +15,7 @@ validate ()
     if [ $1 -n 0 ]
     then
     echo "$2....Failure"
+    exit 1
     else
     echo "$2....Success"
     fi
