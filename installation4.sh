@@ -10,7 +10,7 @@ exit 1
 else
 echo "you are a root user"
 fi
-validate ()
+validate()
 {
     if [ $1 -n 0 ]
     then
