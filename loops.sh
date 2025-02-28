@@ -11,4 +11,9 @@ for i in $@
 do
 echo "packages to install: $i"
 yum list installed $i
+if [ $? -eq 0 ]
+then
+echo "$i already installed...skipping"
+else
+echo "$i not installed....need to install"
 done
