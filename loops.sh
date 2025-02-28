@@ -1,5 +1,8 @@
 #!/bin/bash
 USERID=$(id -u)
+TIME=$(id -u)
+script=$(echo $0 | cut -d "." -f1)
+LOGFILE=/tmp/$TIME-$script
 if [ $USERID -ne 0 ]
 then
 echo "please run the script with root user access"
@@ -19,12 +22,12 @@ validate()
 for i in $@
 do
 echo "packages to install: $i"
-yum list installed $i
+yum list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
 echo "$i already installed...skipping"
 else
-yum install $i
+yum install $i  &>>$LOGFILE
 validate $? "Installation of $i"
 fi
 done
