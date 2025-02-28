@@ -10,5 +10,5 @@ fi
 for i in $@
 do
 echo "packages to install: $i"
-dnf list installed $i
+yum list installed $i
 done
