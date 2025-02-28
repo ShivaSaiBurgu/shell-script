@@ -7,6 +7,15 @@ exit 1
 else
 echo "you are a root user"
 fi
+validate()
+{
+    if [ $? -ne 0 ]
+    then
+    echo "$2....success"
+    else
+    echo "$2....Failure"
+    fi
+}
 for i in $@
 do
 echo "packages to install: $i"
@@ -15,7 +24,7 @@ if [ $? -eq 0 ]
 then
 echo "$i already installed...skipping"
 else
-echo "$i not installed....need to install"
 yum install $i
+validate $? "Installation of $i"
 fi
 done
