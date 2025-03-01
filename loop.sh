@@ -28,6 +28,6 @@ then
 echo "$i...Already installed"
 else
 yum install $i -y &>>LOGFILE
-validate $? "$i...Installation success"
+validate $? "$i...Installation of $i"
 fi
 done
