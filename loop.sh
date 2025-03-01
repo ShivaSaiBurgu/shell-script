@@ -20,6 +20,7 @@ validate()
     fi
 }
 for i in $@
+do
 echo "package to install:$i"
 yum list installed $i &>>LOGFILE
 if [ $? -eq 0 ]
@@ -29,3 +30,4 @@ else
 yum install $i -y &>>LOGFILE
 validate $? "$i...Installation success"
 fi
+done
