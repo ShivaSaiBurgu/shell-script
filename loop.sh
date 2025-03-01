@@ -8,7 +8,7 @@ else
 echo "You are a root user"
 fi
 time=$(date +%F-%H-%M-%S)
-script=$(echo $0 | cut -d "." -f1)
+script=/tmp/$(echo $0 | cut -d "." -f1)
 LOGFILE=$time-$script.log
 validate()
 {
