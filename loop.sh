@@ -22,12 +22,12 @@ validate()
 for i in $@
 do
 echo "package to install:$i"
-yum list installed $i &>>LOGFILE
+yum list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
 echo "$i...Already installed"
 else
-yum install $i -y &>>LOGFILE
+yum install $i -y &>>$LOGFILE
 validate $? "$i...Installation of $i"
 fi
 done
