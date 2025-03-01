@@ -17,6 +17,7 @@ validate()
     echo "$2...Failure"
     else
     echo "$2...success"
+    fi
 }
 for i in $@
 echo "package to install:$i"
