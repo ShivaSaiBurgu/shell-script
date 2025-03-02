@@ -31,3 +31,4 @@ if [ $? -ne 0 ]
 useradd expense &>>$LOGFILE
 else
 echo "user exists"
+fi
