@@ -6,6 +6,7 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
 echo "please run the script with root access"
+exit 1
 else
 echo "You are a root user"
 fi
@@ -23,7 +24,7 @@ validate()
 dnf module disable nodejs -y &>>$LOGFILE
 validate $? "Disabling nodejs"
 dnf module enable nodejs:20 -y &>>$LOGFILE
-validate $? "Enaabling nodejs"
+validate $? "Enabling nodejs"
 dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
 id expense &>>$LOGFILE
@@ -33,3 +34,5 @@ useradd expense &>>$LOGFILE
 else
 echo "user exists"
 fi
+mkdir -p /app
+validate $? "created /app directory"
