@@ -29,7 +29,7 @@ systemctl start mysqld &>>$LOGFILE
 validate $? "starting mysql server"
 systemctl enable mysqld &>>$LOGFILE
 validate $? "Enabling mysql server"
-mysql -h localhost -uroot ${MYSQLPWD} -e 'SHOW DATABASES;'
+mysql -h db.burgu.space -uroot -p${MYSQLPWD} -e 'SHOW DATABASES;' &>>LOGFILE
 if [ $? -eq 0 ]
 then
 echo "Mysql Root Password Already setup"
@@ -37,6 +37,7 @@ else
  mysql_secure_installation --set-root-pass ${MYSQLPWD} &>>$LOGFILE
  validate $? "Mysql password set up"
  fi
+
 
 
 
