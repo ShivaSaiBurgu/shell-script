@@ -32,7 +32,7 @@ if [ $? -eq 0 ]
 then
 echo "Mysql Root Password Already setup"
 else
- mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
+ mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
  validate $? "Mysql password set up"
  fi
 
