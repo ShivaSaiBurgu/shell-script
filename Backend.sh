@@ -28,6 +28,7 @@ dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
 id expense &>>$LOGFILE
 if [ $? -ne 0 ]
+then
 useradd expense &>>$LOGFILE
 else
 echo "user exists"
