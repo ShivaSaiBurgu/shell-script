@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "please enter mysql root password"
+read -s MYSQLPWD
 time=$(date +%F-%H-%M-%S)
 script=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$time-$script.log
@@ -27,12 +29,12 @@ systemctl start mysqld &>>$LOGFILE
 validate $? "starting mysql server"
 systemctl enable mysqld &>>$LOGFILE
 validate $? "Enabling mysql server"
-mysql -h localhost -uroot -pExpenseApp@1 -e 'SHOW DATABASES;'
+mysql -h localhost -uroot ${MYSQLPWD} -e 'SHOW DATABASES;'
 if [ $? -eq 0 ]
 then
 echo "Mysql Root Password Already setup"
 else
- mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
+ mysql_secure_installation --set-root-pass ${MYSQLPWD} &>>$LOGFILE
  validate $? "Mysql password set up"
  fi
 
