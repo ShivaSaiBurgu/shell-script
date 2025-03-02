@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "please enter mysql root password"
-read -s MYSQLPWD
 time=$(date +%F-%H-%M-%S)
 script=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$time-$script.log
@@ -12,6 +10,8 @@ exit 1
 else
 echo "You are a root user"
 fi
+echo "please enter mysql root password"
+read -s MYSQLPWD
 
 validate()
 {
