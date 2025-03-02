@@ -21,6 +21,8 @@ validate()
     echo "$2...success"
     fi
 }
+echo "please enter mysql password"
+read -s mysql_root_password
 dnf module disable nodejs -y &>>$LOGFILE
 validate $? "Disabling nodejs"
 dnf module enable nodejs:20 -y &>>$LOGFILE
@@ -42,3 +44,10 @@ cd /app
 rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
 validate $? "extracting code"
+npm install &>>$LOGFILE 
+cp /home/ec2-user/shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
+systemctl daemon-reload &>>$LOGFILE
+systemctl start backend &>>$LOGFILE
+dnf install mysql -y &>>$LOGFILE
+mysql -h db.burgu.space -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
+systemctl restart backend &>>$LOGFILE
