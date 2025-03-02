@@ -26,3 +26,8 @@ dnf module enable nodejs:20 -y &>>$LOGFILE
 validate $? "Enaabling nodejs"
 dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
+id expense &>>$LOGFILE
+if [ $? -ne 0 ]
+useradd expense &>>$LOGFILE
+else
+echo "user exists"
