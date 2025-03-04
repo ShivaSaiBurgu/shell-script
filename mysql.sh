@@ -19,7 +19,7 @@ VALIDATE()
     echo "$2...success"
     fi
 }
-yum install mysql -y &>>$LOGFILE
+yum install mysql-server -y &>>$LOGFILE
 VALIDATE $? "Installing mysql"
 systemctl enable mysqld
 VALIDATE $? "Enabling mysql"
