@@ -7,7 +7,7 @@ else
 echo "You are a root user"
 fi
 echo "please enter mysql password"
-read -s PWD
+read  PWD
 time=$(date +%F-%H-%M-%S)
 script=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$time-$script.log
