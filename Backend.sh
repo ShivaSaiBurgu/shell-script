@@ -6,6 +6,8 @@ exit 1
 else
 echo "You are a root user"
 fi
+echo "please enter mysql password"
+read -s PWD
 time=$(date +%F-%H-%M-%S)
 script=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$time-$script.log
@@ -53,6 +55,6 @@ systemctl enable backend  &>>$LOGFILE
 VALIDATE $? "enabling backend"
 dnf install mysql -y  &>>$LOGFILE
 VALIDATE $? "Installing mysql client"
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h db.burgu.space -uroot -p${PWD} < /app/schema/backend.sql
 systemctl restart backend  &>>$LOGFILE
 VALIDATE $? "restarting backend"
