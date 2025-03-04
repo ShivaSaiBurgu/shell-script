@@ -22,7 +22,7 @@ dnf module disable nodejs -y &>>$LOGFILE
 VALIDATE $? "Disabling node js"
 dnf module enable nodejs:20 -y &>>$LOGFILE
 VALIDATE $? "Enabling nodejs"
-dnf install nodejs -y
+dnf install nodejs -y &>>$LOGFILE
 VALIDATE $? "Installing nodejs" &>>$LOGFILE
 id expense
 if [ $? -eq 0 ]
