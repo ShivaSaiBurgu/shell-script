@@ -40,3 +40,6 @@ cd /app
 rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "extracted code successfully"
+cd /app
+npm install
+VALIDATE $? "Installing Depedencies"
