@@ -45,3 +45,14 @@ npm install &>>$LOGFILE
 VALIDATE $? "Installing Depedencies"
 cp /home/ec2-user/shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 VALIDATE $? "created backend.service"
+systemctl daemon-reload  &>>$LOGFILE
+VALIDATE $? "daemon reload"
+systemctl start backend  &>>$LOGFILE
+VALIDATE $? "starting backend"
+systemctl enable backend  &>>$LOGFILE
+VALIDATE $? "enabling backend"
+dnf install mysql -y  &>>$LOGFILE
+VALIDATE $? "Installing mysql client"
+mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql
+systemctl restart backend  &>>$LOGFILE
+VALIDATE $? "restarting backend"
