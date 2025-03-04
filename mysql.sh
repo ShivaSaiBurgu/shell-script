@@ -21,11 +21,11 @@ VALIDATE()
 }
 yum install mysql-server -y &>>$LOGFILE
 VALIDATE $? "Installing mysql"
-systemctl enable mysqld
+systemctl enable mysqld &>>$LOGFILE
 VALIDATE $? "Enabling mysql"
-systemctl start mysqld
+systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "Starting mysql"
-mysql_secure_installation --set-root-pass ExpenseApp@1
+mysql_secure_installation --set-root-pass ExpenseApp@1 
 VALIDATE $? "password setup" 
 
 
