@@ -41,5 +41,7 @@ rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "extracted code successfully"
 cd /app
-npm install
+npm install &>>$LOGFILE
 VALIDATE $? "Installing Depedencies"
+cp /home/ec2-user/shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
+VALIDATE $? "created backend.service"
