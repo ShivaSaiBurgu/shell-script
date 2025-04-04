@@ -6,7 +6,7 @@
 ############
 set -x #Debug mode
 set -e #code execution fails when error occurs
-set -o pipefail #pipefail
+set -opipefail #pipefail
 free -g
 nproc
 df -h
