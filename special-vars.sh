@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "The given value is: $@"
+echo "the current directory is: $PWD"
+echo "Home directory of current user is: $HOME"
+echo "The script name is: $0"
+echo "The number of variables passed is: $#"
+echo "which user is running the script is: $USER"
+echo "hostname is: $HOSTNAME"
+echo "Process Id of current shell script is: $$"
+echo "Process Id of last background command is: $!"
