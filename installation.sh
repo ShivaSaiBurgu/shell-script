@@ -7,7 +7,7 @@ exit 1
 else
 echo "You are a super user"
 fi
-dnf install mysqld-server -y
+dnf install mysql-server -y
 if [ $? -ne 0 ]
 then
 echo "Installaion of mysql....Failed"
