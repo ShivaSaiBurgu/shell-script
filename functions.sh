@@ -4,6 +4,7 @@ validate() {
     if [ $? -ne 0 ]
     then
     echo "$2...Failed"
+    exit 1
     else
     echo "$2...Success"
     fi
@@ -18,3 +19,5 @@ echo "You are a super user"
 fi
 dnf install mysql-server -y
 validate $? "Installation of Mysql"
+dnf install git -y
+validate $? "Installation of git"
