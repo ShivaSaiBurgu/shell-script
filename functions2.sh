@@ -19,7 +19,7 @@ else
 echo "$2...success"
 fi
 }
-dnf install mysql -y
+dnf install mysql -y >>& $LOGFILE
 validate $? "Installion of Mysql"
 dnf install git -y
 validate $? "Installaion of git"
