@@ -3,6 +3,9 @@ USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME
+R="\e[31m"
+G="\e[32m"
+M="\e[0m"
 validate() {
     if [ $1 -ne 0 ]
     then
@@ -25,9 +28,9 @@ echo "package to install: $i"
 dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
-echo "$i...already installed"
+echo -e "$i...$R already installed $M"
 else
-echo "$i...not installed"
+echo -e "$i...$G not installed $M"
 fi
 done
 
