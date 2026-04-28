@@ -7,7 +7,7 @@ exit 1
 else
 echo "You are a root user"
 fi
-dnf installd mysql -y
+dnf install mysql -y
 if [ $? -ne 0 ]
 then
 echo "Installation of mysql...failed"
