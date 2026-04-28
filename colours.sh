@@ -25,3 +25,5 @@ dnf install mysql -y &>> $LOGFILE
 validate $? "Installion of Mysql"
 dnf install git -y &>> $LOGFILE
 validate $? "Installaion of git"
+dnf install dockerr -y &>> $LOGFILE
+validate $? "Installation of Docker"
