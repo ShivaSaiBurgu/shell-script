@@ -19,5 +19,15 @@ exit 1
 else
 echo "You are a root user"
 fi
-dnf list installed $@
+for i in $@
+do
+echo "package to install: $i"
+dnf list installed $i
+if [ $? -eq 0 ]
+then
+echo "$i...already installed"
+else
+echo "$i...not installed"
+done
+
 
