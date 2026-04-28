@@ -7,7 +7,7 @@ exit 1
 else
 echo "You are a super user"
 fi
-R=\e[32m
+R="\e[32m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME
