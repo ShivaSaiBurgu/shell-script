@@ -9,10 +9,10 @@ M="\e[0m"
 validate() {
     if [ $1 -ne 0 ]
     then
-    echo "$2..Failure"
+    echo -e "$2..$R Failure"
     exit 1
     else
-    echo "$2..success"
+    echo "$2..$G success"
     fi
 }
 if [ $USERID -ne 0 ]
@@ -28,9 +28,10 @@ echo "package to install: $i"
 dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
-echo -e "$i...$R already installed $M"
+echo -e "$i...$G already installed $M"
 else
-echo -e "$i...$G not installed $M"
+dnf install $i -y &>>$LOGFILE
+validate $? "Installation of $i"
 fi
 done
 
