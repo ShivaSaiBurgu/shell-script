@@ -14,10 +14,10 @@ LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME
 validate() {
 if [ $1 -ne 0 ]
 then
-echo "$2...-e $R failure"
+echo -e "$2... $R failure"
 exit 1
 else
-echo "$2...-e $R success"
+echo -e "$2... $R success"
 fi
 }
 dnf install mysql -y &>> $LOGFILE
