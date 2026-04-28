@@ -19,5 +19,5 @@ exit 1
 else
 echo "You are a root user"
 fi
-dnf list installed 
+dnf list installed $@
 
