@@ -22,3 +22,4 @@ echo "Installation of git...failed"
 exit 1
 else
 echo "Installation of git...success"
+fi
