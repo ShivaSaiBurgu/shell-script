@@ -22,7 +22,7 @@ fi
 for i in $@
 do
 echo "package to install: $i"
-dnf list installed $i
+dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
 echo "$i...already installed"
