@@ -28,6 +28,7 @@ then
 echo "$i...already installed"
 else
 echo "$i...not installed"
+fi
 done
 
 
