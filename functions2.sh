@@ -16,3 +16,9 @@ else
 echo "Installation of mysql...success"
 fi
 dnf install git -y
+if [ $? -ne 0 ]
+then
+echo "Installation of git...failed"
+exit 1
+else
+echo "Installation of git...success"
