@@ -19,6 +19,5 @@ exit 1
 else
 echo "You are a root user"
 fi
-dnf install mysql -y &>>$LOGFILE
-validate $? "Installation of mysql"
+dng list installed
 
