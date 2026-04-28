@@ -1,5 +1,14 @@
 #!/bin/bash
 USERID=$(id -u)
+validate() {
+if [ $1 -ne 0 ]
+then
+echo "$2...failure"
+exit 1
+else
+echo "$2...success"
+fi
+}
 if [ $USERID -ne 0 ]
 then
 echo "Please run the script with root user"
@@ -8,18 +17,6 @@ else
 echo "You are a root user"
 fi
 dnf install mysql -y
-if [ $? -ne 0 ]
-then
-echo "Installation of mysql...failed"
-exit 1
-else
-echo "Installation of mysql...success"
-fi
+validate $? "Installion of Mysql"
 dnf install git -y
-if [ $? -ne 0 ]
-then
-echo "Installation of git...failed"
-exit 1
-else
-echo "Installation of git...success"
-fi
+validate $? "Installaion of git"
