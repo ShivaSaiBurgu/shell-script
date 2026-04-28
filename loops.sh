@@ -12,7 +12,7 @@ validate() {
     echo -e "$2..$R Failure"
     exit 1
     else
-    echo "$2..$G success"
+    echo -e "$2..$G success"
     fi
 }
 if [ $USERID -ne 0 ]
