@@ -25,7 +25,7 @@ if [ $? -eq 0 ]
 then
 echo "$i....already installed"
 else
-dnf install -y $i
+dnf install -y $i &>>$LOGFILE
 validate $? "Installation of $i"
 fi
 done
