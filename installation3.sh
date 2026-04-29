@@ -12,7 +12,7 @@ echo "You are a root user"
 fi
 for i in $@
 do
-dnf list installed $i
+dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
 echo "$i....already installed"
