@@ -18,6 +18,7 @@ else
 echo "You are a super user"
 fi
 for i in $@
+do
 echo "Installation of $i"
 dnf list installed $id
 if [ $? -eq 0 ]
@@ -26,3 +27,4 @@ echo "$i..already installed"
 else
 dnf install $i -y
 validate $? "Installation of $i"
+done
