@@ -20,12 +20,13 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME
 R="\e[31m"
 G="\e[32m"
+W="\e[0m"
 for i in $@
 do
 dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
-echo -e "$G $i...already installed $M"
+echo -e " $i...$R already installed $W"
 else
 dnf install $i -y &>>$LOGFILE
 validate $? "Installation of $i"
