@@ -29,4 +29,5 @@ echo "$i...already installed"
 else
 dnf install $i -y
 validate $? "Installation of $i"
+fi
 done
