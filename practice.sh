@@ -10,14 +10,14 @@ validate() {
     echo "$2...Failure"
     fi
 }
-dnf install mysql-server -y &>>$LOGFILE
+dnf install mysql-server -y 
 validate $? "Installation of mysql"
 
-systemctl enable mysqld &>>$LOGFILE
+systemctl enable mysqld 
 validate $? "Enabling MySQL Server"
 
-systemctl start mysqld &>>$LOGFILE
+systemctl start mysqld 
 validate $? "Starting MySQL Server"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
+mysql_secure_installation --set-root-pass ExpenseApp@1 
 validate $? "Setting up root password"
