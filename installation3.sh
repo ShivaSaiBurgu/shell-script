@@ -18,8 +18,8 @@ validate() {
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/-$TIMESTAMP-$SCRIPT_NAME
-R="\e[32m"
-G="\e[33m"
+R="\e[31m"
+G="\e[32m"
 dnf list installed $@ &>>$LOGFILE
 for i in $@
 do
