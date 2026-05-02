@@ -21,8 +21,8 @@ LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME
 R="\e[31m"
 G="\e[32m"
 for i in $@
-dnf list installed $i &>>$LOGFILE
 do
+dnf list installed $i &>>$LOGFILE
 if [ $? -eq 0 ]
 then
 echo -e "$G $i...already installed $M"
