@@ -20,7 +20,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/-$TIMESTAMP-$SCRIPT_NAME
 R="\e[32m"
 G="\e[33m"
-dnf list installed $@
+dnf list installed $@ &>>$LOGFILE
 for i in $@
 do
 if [ $? -eq 0 ]
