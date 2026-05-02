@@ -25,9 +25,9 @@ for i in $@
 do
 if [ $? -eq 0 ]
 then
-echo "$i...already installed"
+echo -e "$G $i...already installed $M"
 else
-dnf install $i -y
+dnf install $i -y &>>$LOGFILE
 validate $? "Installation of $i"
 fi
 done
