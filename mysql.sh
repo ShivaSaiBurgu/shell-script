@@ -28,6 +28,10 @@ systemctl enable mysqld &>>$LOGFILE
 validate $? "Enabling of mysql" 
 systemctl start mysqld &>>$LOGFILE
 validate $? "starting of mysql"
+mysql -h db.burgu.online -uroot -pExpenseApp@1 -e 'SHOW DATABASES;'
+if [ $? -eq 0 ]
+then
+echo "mysql password already set up...SKipping"
+else
 mysql_secure_installation --set-root-pass ExpenseApp@1
-validate $? "Mysql password setup"
-
+fi
