@@ -9,10 +9,10 @@ W="\e[33m"
 validate(){
     if [ $1 -ne 0 ]
     then
-    echo "$2...Failure"
+    echo "$2...$R Failure $W"
     exit 1
     else
-    echo "$2..success"
+    echo -e "$2..$G success $W"
     fi
 }
 if [ $USERID -ne 0 ]
