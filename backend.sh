@@ -22,9 +22,9 @@ exit 1
 else
 echo "You are a root user"
 fi
-dnf module disable nodejs -y
+dnf module disable nodejs -y &>>$LOGFILE
 validate $? "Disabling nodejs"
-dnf module enable nodejs:20 -y
+dnf module enable nodejs:20 -y &>>$LOGFILE
 validate $? "Enabling nodejs:20"
-dnf install nodejs -y
+dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
