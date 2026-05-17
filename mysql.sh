@@ -7,4 +7,5 @@ else
 echo "you are a root user"
 fi
 TIMESTAMP=$(date +%F-%H-%M-%S)
-echo $TIMESTAMP
+SCRIPT_NAME=$(echo $0)
+echo $SCRIPT_NAME
