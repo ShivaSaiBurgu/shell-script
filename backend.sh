@@ -20,9 +20,9 @@ validate() {
     echo -e "$2...$G success $W"
     fi
 }
-dnf module disable nodejs -y $>>$LOGFILE
+dnf module disable nodejs -y &>>$LOGFILE
 validate $? "Disabling nodejs"
-dnf module enable nodejs:20 -y $>>$LOGFILE
+dnf module enable nodejs:20 -y &>>$LOGFILE
 validate $? "Enabling nodejs"
-dnf install nodejs -y $>>$LOGFILE
+dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
