@@ -36,5 +36,10 @@ validate $? "Added user"
 fi
 mkdir -p /app &>>$LOGFILE
 validate $? "creating /app directory"
-curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGFILE
 validate $? "Downloading Code"
+cd /app
+unzip /tmp/backend.zip
+validate  $? "unzipping code"
+npm install
+validate $? "Installing nodejs dependencies"
