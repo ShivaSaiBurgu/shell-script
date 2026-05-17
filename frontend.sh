@@ -33,7 +33,7 @@ validate $? "Downloading frontend code"
 cd /usr/share/nginx/html 
 unzip /tmp/frontend.zip &>>$LOGFILE
 validate $? "unzipping code"
-cp home/ec2-user/shell-script/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
+cp /home/ec2-user/shell-script/expense.conf /etc/nginx/default.d/expense.conf &>>$LOGFILE
 validate $? "copying expen"
 systemctl restart nginx &>>$LOGFILE
 validate $? "Restarting nginx"
