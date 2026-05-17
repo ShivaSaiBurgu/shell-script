@@ -39,7 +39,7 @@ validate $? "creating /app directory"
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGFILE
 validate $? "Downloading Code"
 cd /app
-unzip /tmp/backend.zip
+unzip /tmp/backend.zip &>>$LOGFILE
 validate  $? "unzipping code"
-npm install
+npm install &>>$LOGFILE
 validate $? "Installing nodejs dependencies"
