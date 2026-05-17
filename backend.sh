@@ -43,3 +43,11 @@ unzip /tmp/backend.zip &>>$LOGFILE
 validate  $? "unzipping code"
 npm install &>>$LOGFILE
 validate $? "Installing nodejs dependencies"
+cp /home/ec2-user/shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
+validate $? "copied backend.service"
+systemctl daemon-reload &>>$LOGFILE
+validate $? "copied backend.service"
+systemctl start backend &>>$LOGFILE
+validate $? "copied backend.service"
+systemctl enable backend &>>$LOGFILE
+validate $? "copied backend.service"
