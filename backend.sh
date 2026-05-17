@@ -27,3 +27,10 @@ validate $? "Enabling nodejs"
 dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
 id expense
+if [ $? -eq 0 ]
+then
+echo "User Already exists"
+else
+useradd expense
+validate $? "Added user"
+fi
