@@ -17,6 +17,6 @@ echo "Please run the script with root user access"
 else
 echo "you are a root user"
 fi
-dnf install mysql-server -y
+dnf install mysql-server -y &>>$LOGFILE
 validate $? "Installation of mysql"
 
