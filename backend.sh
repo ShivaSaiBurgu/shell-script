@@ -51,3 +51,11 @@ systemctl start backend &>>$LOGFILE
 validate $? "starting backend"
 systemctl enable backend &>>$LOGFILE
 validate $? "enabling backend"
+dnf install mysql -y &>>$LOGFILE
+validate $? "Installing mysql client"
+echo "Please enter mysql password"
+read -s PASSWORD
+mysql -h db.burgu.online -uroot -p${PASSWORD} < /app/schema/backend.sql
+validate $? "schema loading"
+systemctl restart backend
+validate $? "restarting backend"
