@@ -34,3 +34,5 @@ else
 useradd expense &>>$LOGFILE
 validate $? "Added user"
 fi
+mkdir /app &>>$LOGFILE
+validate $? "creating /app directory"
