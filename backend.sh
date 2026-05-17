@@ -46,8 +46,8 @@ validate $? "Installing nodejs dependencies"
 cp /home/ec2-user/shell-script/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 validate $? "copied backend.service"
 systemctl daemon-reload &>>$LOGFILE
-validate $? "copied backend.service"
+validate $? "daemon reload"
 systemctl start backend &>>$LOGFILE
-validate $? "copied backend.service"
+validate $? "starting backend"
 systemctl enable backend &>>$LOGFILE
-validate $? "copied backend.service"
+validate $? "enabling backend"
