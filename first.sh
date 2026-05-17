@@ -1,5 +1,5 @@
 name="first"
 echo $name
 echo "Process id is $$"
-./second.sh
+source ./second.sh
 echo $name
