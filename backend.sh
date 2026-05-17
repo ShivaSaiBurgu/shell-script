@@ -26,3 +26,4 @@ dnf module enable nodejs:20 -y &>>$LOGFILE
 validate $? "Enabling nodejs"
 dnf install nodejs -y &>>$LOGFILE
 validate $? "Installing nodejs"
+id expense
