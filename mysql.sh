@@ -26,7 +26,7 @@ systemctl enable mysqld &>>$LOGFILE
 validate $? "Enabling mysql"
 systemctl start mysqld &>>$LOGFILE
 validate $? "Starting mysql"
-mysql -h db.burgu.online -uroot -pExpenseApp@1 -e "SHOW DATABASES;"
+mysql -h db.burgu.online -uroot -pExpenseApp@1 -e "SHOW DATABASES;" &>>$LOGFILE
 if [ $? -eq 0 ]
 then
 echo "Password already set up"
