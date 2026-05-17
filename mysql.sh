@@ -6,3 +6,5 @@ echo "Please run the script with root user access"
 else
 echo "you are a root user"
 fi
+TIMESTAMP=$(date +%F-%H-%M-%S)
+echo $TIMESTAMP
