@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+trap 'echo "Error at line $LINENO"' ERR
 R="\e[31m"
 G="\e[32m"
 W="\e[33m"
