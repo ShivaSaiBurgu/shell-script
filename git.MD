@@ -4,3 +4,4 @@ add the changes to temporary area
 Here I am learning git commands
 implemented poll-scm again
 resolving the issue
+trying again
